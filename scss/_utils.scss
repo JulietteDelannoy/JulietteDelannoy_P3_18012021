@@ -1,0 +1,12 @@
+//variables, fonctions, mixins et les  %placeholders 
+
+$Primary: #9356DC; // violet
+$Secondary: #FF79DA; // rose
+$Tertiaire:  #99E2D0;//vert d'eau
+$gris: #f6f6f6; //gris background
+
+@mixin shadow { 
+    box-shadow :  4px 4px 8px 5px #c3c0c7;
+}
+
+
