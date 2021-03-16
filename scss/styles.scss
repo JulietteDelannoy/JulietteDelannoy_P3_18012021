@@ -79,7 +79,7 @@ padding: 0px 0px ;}
 aside 
 {   
     z-index: 500;
-    margin-bottom: 30px;
+    margin-top: 40px;
     h2 {
     margin-left: 15px;
     }
@@ -150,6 +150,9 @@ main{
 
 .block
 {   background-color: $gris;
+    margin-top: 20px;
+    padding-bottom: 40px;
+    width: 100%;
    @media (min-width: 800px) 
    {
       width: 80%;
