@@ -39,6 +39,8 @@ a:hover {
   margin-bottom: 0px;
   margin-top: 0px;
   padding: 0px;
+  position: relative;
+  display: block;
 }
 
 .coeur_plein {
@@ -46,23 +48,29 @@ a:hover {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  display: none;
   margin: 0px;
   padding: 0px;
-  padding-top: 4px;
+  opacity: 01;
+  position: absolute;
+  line-height: 1;
 }
 
 .coeur_vide {
   margin: 0px;
   padding: 0px;
+  opacity: 1;
+  position: relative;
+  line-height: 1;
 }
 
 .coeur:hover .coeur_plein {
   display: block;
+  opacity: 1;
+  transition-duration: 550ms;
 }
 
 .coeur:hover .coeur_vide {
-  display: none;
+  opacity: 0;
 }
 
 .btn:hover {
@@ -124,7 +132,7 @@ a:hover {
   }
   100% {
     margin-bottom: 0px;
-    margin-top: 20px;
+    margin-top: -20px;
     opacity: 1;
   }
 }
@@ -200,11 +208,13 @@ a:hover {
   margin: 0px;
   opacity: 1;
   border-radius: 0px  15px 15px 0px;
+  cursor: pointer;
 }
 
 .en_tete {
   display: flex;
   justify-content: space-between;
+  font-size: 1.5rem;
 }
 
 .en_tete .fas {
@@ -242,17 +252,17 @@ a:hover {
   flex-direction: column;
   align-content: center;
   justify-content: center;
-  border-top: #f6f6f6 5px;
-  border-radius: 60px;
+  border-top: 5px;
+  border-radius: 60px 60px 0px 0px;
   z-index: 500;
-  top: -800px;
 }
 
 .menu h1 {
   display: flex;
   justify-content: space-between;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 1.5rem;
 }
 
 .restaurant_img {
@@ -270,9 +280,10 @@ a:hover {
 }
 
 .menu h2 {
-  border-bottom: #99E2D0 solid 2px;
+  border-bottom: #99E2D0 solid 4px;
   font-weight: 100;
   width: 50px;
+  margin-left: 20px;
 }
 
 .menu li {
@@ -283,7 +294,7 @@ a:hover {
   margin: 20px;
   border-radius: 15px;
   align-content: center;
-  box-shadow: 4px 4px 8px 5px #c3c0c7;
+  box-shadow: 4px 4px 8px 5px #e9e5e5;
 }
 
 .menu li h3 {
@@ -314,7 +325,19 @@ a:hover {
 }
 
 @media (min-width: 800px) {
-  .menu ul {
+  .menu .entree {
+    width: 29%;
+  }
+}
+
+@media (min-width: 800px) {
+  .menu .plats {
+    width: 29%;
+  }
+}
+
+@media (min-width: 800px) {
+  .menu .desserts {
     width: 29%;
   }
 }
@@ -329,7 +352,7 @@ header {
   font-family: 'Shrikhand', cursive;
   display: flex;
   justify-content: center;
-  font-size: 3em;
+  font-size: 2rem;
   z-index: 500;
 }
 
@@ -389,11 +412,12 @@ header {
   font-size: 0.9em;
   display: flex;
   justify-content: center;
-  box-shadow: 4px 4px 8px 5px #c3c0c7;
+  box-shadow: 4px 4px 8px 5px #e9e5e5;
 }
 
 aside {
   z-index: 500;
+  margin-bottom: 30px;
 }
 
 aside h2 {
@@ -403,16 +427,23 @@ aside h2 {
 aside ul {
   list-style: none;
   z-index: 500;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: space-between;
 }
 
 aside li {
   background-color: #f6f6f6;
-  border-radius: 60px;
-  box-shadow: 4px 4px 8px 5px #c3c0c7;
-  margin: 25px;
-  padding: 15px;
+  border-radius: 20px;
+  box-shadow: 4px 4px 8px 5px #e9e5e5;
+  margin: 15px;
+  padding: 20px 10px;
   width: 250px;
   z-index: 500;
+  position: relative;
+  justify-content: center;
+  align-content: space-between;
 }
 
 aside li:hover {
@@ -426,7 +457,10 @@ aside .number {
   border-radius: 90%;
   padding: 5px;
   padding-left: 8px;
+  padding-right: 8px;
   margin-right: 0px;
+  position: absolute;
+  left: -13px;
 }
 
 aside .fas {
@@ -451,9 +485,14 @@ main h2 {
   }
 }
 
+.block {
+  background-color: #f6f6f6;
+}
+
 @media (min-width: 800px) {
   .block {
     width: 80%;
+    background-color: #FFFFFF;
   }
 }
 
@@ -500,7 +539,7 @@ main h2 {
   border-radius: 15px;
   align-content: center;
   justify-content: center;
-  box-shadow: 4px 4px 8px 5px #c3c0c7;
+  box-shadow: 4px 4px 8px 5px #e9e5e5;
 }
 
 .vignette img {
@@ -529,7 +568,7 @@ main h2 {
 }
 
 .new {
-  border: 1px solid #99e2d0;
+  border: 1px solid  #99e2d0;
   border-radius: 5px;
   background-color: #99e2d0;
   color: #269d80;
@@ -556,6 +595,11 @@ footer {
   z-index: 500;
 }
 
+footer a:link {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
 footer li {
   margin-bottom: 10px;
 }
@@ -571,5 +615,6 @@ footer .fas {
 footer .logo {
   font-size: 1.1em;
   padding: 15px 30px;
+  font-weight: 100;
 }
 /*# sourceMappingURL=styles.css.map */

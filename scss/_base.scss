@@ -46,6 +46,9 @@ a:hover
     margin-bottom: 0px;
     margin-top: 0px;
     padding: 0px;
+    position: relative;
+    display: block;
+   
 }
 
 .coeur_plein
@@ -54,26 +57,35 @@ a:hover
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent; 
-    display: none; 
     margin:0px;
     padding: 0px;
-    padding-top: 4px;
+    opacity: 01;
+    position: absolute;
+    line-height: 1;
+    
 }
 
 .coeur_vide
 {
     margin:0px;
     padding: 0px;
+    opacity: 1;
+    
+    position: relative;
+    line-height: 1;
 }
 
 .coeur:hover .coeur_plein
 {
 display: block;
+opacity: 1;
+transition-duration: 550ms;
+
 }
 
 .coeur:hover .coeur_vide
 {
-    display: none; 
+    opacity: 0; 
 }
 
 
@@ -131,7 +143,7 @@ display: block;
 //animation menu  
 @keyframes transition {
     0%   { margin-bottom: 0px;opacity:0; }
-    100% { margin-bottom: 0px;margin-top: 20px;  opacity:1; }
+    100% { margin-bottom: 0px;margin-top: -20px;  opacity:1; }
     }
     .entree {opacity:0;animation: transition 0.5s ease-in-out 1s forwards;}
     .plats {opacity:0;animation: transition 1.5s ease-in-out 1s forwards;}
@@ -189,7 +201,7 @@ padding-top:50px;
       
   opacity: 0;
   height: 100%;
-  align-items: center;
+  align-items : center;
 justify-content: center;
 display: flex;
 
@@ -210,4 +222,5 @@ justify-content: center;
 margin: 0px;
 opacity: 1;
 border-radius: 0px  15px 15px 0px ;
+cursor:pointer;
 }
