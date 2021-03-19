@@ -168,10 +168,6 @@ a:hover {
   padding: 10px;
 }
 
-.span {
-  transition: transform 130ms ease-in-out;
-}
-
 .food {
   display: flex;
   flex-direction: column;
@@ -186,28 +182,50 @@ a:hover {
   display: flex;
   align-content: center;
   justify-content: center;
+  width: 0px;
+  padding-top: 5px;
+  background-color: #99E2D0;
+  border-radius: 0px  15px 15px 0px;
+  cursor: pointer;
+  transition-property: width;
+  transition-duration: 1.5s;
 }
 
-.check > .fas {
-  opacity: 0;
+.description:hover .check {
+  width: 70px;
+  padding-top: 5px;
+}
+
+.check .fas {
   height: 100%;
   align-items: center;
   justify-content: center;
   display: flex;
+  z-index: -1;
+  color: #FFFFFF;
 }
 
 .description:hover .fas {
-  width: 60px;
-  height: 100%;
-  background-color: #99E2D0;
-  color: #FFFFFF;
-  padding-top: 3px;
-  align-content: center;
-  justify-content: center;
-  margin: 0px;
-  opacity: 1;
-  border-radius: 0px  15px 15px 0px;
-  cursor: pointer;
+  animation-name: coche;
+  animation-duration: 5s;
+  animation: 5s 1 rotation;
+  animation-delay: 300ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes coche {
+  0% {
+    transform: rotate(0deg);
+    z-index: 9999;
+  }
+  20% {
+    transform: rotate(180deg);
+    z-index: 9999;
+  }
+  100% {
+    transform: rotate(360deg);
+    z-index: 9999;
+  }
 }
 
 .en_tete {
@@ -277,14 +295,15 @@ a:hover {
   margin: 10px;
   width: 85%;
   max-width: 500px;
+  cursor: pointer;
   margin: 20px;
   display: flex;
   justify-content: space-between;
   padding: 0px;
   border-radius: 15px;
   align-content: center;
+  z-index: 400;
   box-shadow: 4px 4px 8px 5px #e9e5e5;
-  padding-bottom: 03px;
 }
 
 .description h3 {
@@ -406,22 +425,26 @@ header {
 aside {
   z-index: 500;
   margin-top: 40px;
+  display: flex;
+  flex-direction: column;
 }
 
 aside h2 {
   margin-left: 15px;
+  max-width: 300px;
 }
 
-aside ul {
+aside .ul {
   list-style: none;
   z-index: 500;
+  max-width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-content: space-between;
+  align-content: center;
 }
 
-aside li {
+aside .li {
   background-color: #f6f6f6;
   border-radius: 20px;
   box-shadow: 4px 4px 8px 5px #e9e5e5;
@@ -430,11 +453,11 @@ aside li {
   width: 250px;
   z-index: 500;
   position: relative;
-  justify-content: center;
-  align-content: space-between;
+  justify-items: center;
+  align-items: center;
 }
 
-aside li:hover {
+aside .li:hover {
   background-color: #f5edff;
 }
 
@@ -490,6 +513,8 @@ main h2 {
 .restaurant {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-content: center;
 }
 
 @media (min-width: 800px) {

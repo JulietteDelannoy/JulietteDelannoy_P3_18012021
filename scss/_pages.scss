@@ -81,15 +81,16 @@ margin-left: 20px;
    margin: 10px;
    width: 85%;
    max-width: 500px;
-  
+   cursor: pointer;
    margin: 20px;
    display: flex;
    justify-content: space-between;
     padding: 0px;
    border-radius: 15px;
    align-content: center;
+   z-index: 400;
    @include shadow;  
-    padding-bottom: 03px;
+   
     h3
     {
         margin: 10px;

@@ -171,13 +171,9 @@ transition-duration: 2s;
 .price
 {
 padding: 10px;
-
-     
+    
   } 
-
-  .span {
-    transition: transform 130ms ease-in-out;
-    }
+ 
 
  .food
     {
@@ -198,32 +194,44 @@ padding: 10px;
     display: flex;
     align-content: center;
     justify-content: center;
-}
-  .check>.fas
-  {
-      
-  opacity: 0;
-  height: 100%;
-  align-items : center;
-justify-content: center;
-display: flex;
+width: 0px;
 
-
-       
-  }
-
-  
-.description:hover .fas
-{
-width: 60px;
-height: 100%;
+padding-top: 5px;
 background-color: #99E2D0;
-color: #FFFFFF;
-padding-top: 3px;
-align-content: center;
-justify-content: center;
-margin: 0px;
-opacity: 1;
 border-radius: 0px  15px 15px 0px ;
-cursor:pointer;
+cursor: pointer;
+transition-property: width;
+    transition-duration: 1.5s;}
+
+.description:hover .check {
+    width: 70px;
+    padding-top: 5px;
+   }
+  
+
+
+.check .fas
+{
+    
+   height: 100%;
+    align-items : center;
+  justify-content: center;
+  display: flex;
+ z-index:-1;
+color: #FFFFFF;}
+
+.description:hover .fas
+{ 
+animation-name: coche;
+animation-duration: 5s;
+animation: 5s 1 rotation;
+animation-delay: 300ms;
+animation-fill-mode: forwards;
+@keyframes coche {
+    
+   
+    0% {transform: rotate(0deg); z-index: 9999;  }
+    20% {transform: rotate(180deg);z-index: 9999;}
+    100% {transform: rotate(360deg); z-index: 9999;}
+}
 }
