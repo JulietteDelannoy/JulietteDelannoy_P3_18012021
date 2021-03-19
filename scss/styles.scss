@@ -80,30 +80,38 @@ aside
 {   
     z-index: 500;
     margin-top: 40px;
-    margin-left: 15px;
-       display: flex;
+    padding-right: 0px; ;
+       
+}
+
+.fonctionnement
+    { 
+    display: flex;
     flex-direction: column;
-    
-    align-content: center;
    
+
+    @media (min-width: 800px)
+      {
+            margin-left: 25px;
+      } 
 
         h2 {
         margin-left: 15px;
         max-width:  300px;
        
         } 
-        .ul
+       .fonctionnement_liste
         {
-        list-style: none;
+        
         z-index: 500;
-        max-width:  500px;
+        
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-content: space-between;
+        align-items: center;
         
         } 
-        .li
+        .fonctionnement_step
         {
         background-color:$gris;
         border-radius: 20px;
@@ -115,6 +123,9 @@ aside
         position: relative;
         justify-items: center;
         align-items: center;
+        justify-content: center;
+        align-content: center;
+        display: flex;
 
         }
         .li:hover
@@ -154,7 +165,7 @@ main{
        @media (min-width: 800px)
       {
          flex-direction: row-reverse;
-         
+         justify-content: space-between;
       }  
 }
 
@@ -167,7 +178,7 @@ main{
     flex-direction: column;
    @media (min-width: 800px) 
    {
-      width: 80%;
+      width: 70%;
       background-color: #FFFFFF;
    }
 }
@@ -176,7 +187,7 @@ main{
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-content: center;
+      align-items: center;
       
       padding: 10px;
       

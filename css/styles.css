@@ -425,28 +425,34 @@ header {
 aside {
   z-index: 500;
   margin-top: 40px;
-  margin-left: 15px;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
+  padding-right: 0px;
 }
 
-aside h2 {
+.fonctionnement {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 800px) {
+  .fonctionnement {
+    margin-left: 25px;
+  }
+}
+
+.fonctionnement h2 {
   margin-left: 15px;
   max-width: 300px;
 }
 
-aside .ul {
-  list-style: none;
+.fonctionnement .fonctionnement_liste {
   z-index: 500;
-  max-width: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-content: space-between;
+  align-items: center;
 }
 
-aside .li {
+.fonctionnement .fonctionnement_step {
   background-color: #f6f6f6;
   border-radius: 20px;
   box-shadow: 4px 4px 8px 5px #e9e5e5;
@@ -457,13 +463,16 @@ aside .li {
   position: relative;
   justify-items: center;
   align-items: center;
+  justify-content: center;
+  align-content: center;
+  display: flex;
 }
 
-aside .li:hover {
+.fonctionnement .li:hover {
   background-color: #f5edff;
 }
 
-aside .number {
+.fonctionnement .number {
   background-color: #9356DC;
   color: #FFFFFF;
   font-size: 0.7rem;
@@ -476,7 +485,7 @@ aside .number {
   left: -13px;
 }
 
-aside .fas {
+.fonctionnement .fas {
   color: #7e7e7e;
   padding: 0px 10px;
 }
@@ -495,6 +504,7 @@ main h2 {
 @media (min-width: 800px) {
   main {
     flex-direction: row-reverse;
+    justify-content: space-between;
   }
 }
 
@@ -509,7 +519,7 @@ main h2 {
 
 @media (min-width: 800px) {
   .block {
-    width: 80%;
+    width: 70%;
     background-color: #FFFFFF;
   }
 }
@@ -518,7 +528,7 @@ main h2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-content: center;
+  align-items: center;
   padding: 10px;
 }
 
