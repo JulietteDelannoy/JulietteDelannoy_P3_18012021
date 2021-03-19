@@ -80,23 +80,29 @@ aside
 {   
     z-index: 500;
     margin-top: 40px;
-    h2 {
     margin-left: 15px;
-    max-width:  300px;
-    }
-    display: flex;
+       display: flex;
     flex-direction: column;
-    .ul
-    {
-    list-style: none;
-    z-index: 500;
-    max-width:  300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
     
-    } 
+    align-content: center;
+   
+
+        h2 {
+        margin-left: 15px;
+        max-width:  300px;
+       
+        } 
+        .ul
+        {
+        list-style: none;
+        z-index: 500;
+        max-width:  500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: space-between;
+        
+        } 
         .li
         {
         background-color:$gris;
@@ -108,7 +114,7 @@ aside
         z-index: 500;
         position: relative;
         justify-items: center;
-    align-items: center;
+        align-items: center;
 
         }
         .li:hover
@@ -157,6 +163,8 @@ main{
     margin-top: 20px;
     padding-bottom: 40px;
     width: 100%;
+    display: flex;
+    flex-direction: column;
    @media (min-width: 800px) 
    {
       width: 80%;
@@ -169,7 +177,9 @@ main{
       flex-direction: column;
       justify-content: center;
       align-content: center;
-        
+      
+      padding: 10px;
+      
       @media (min-width: 800px) 
       {
       display: grid;
@@ -194,17 +204,37 @@ main{
     }
     
    }
+
+   .restaurant a
+   {
+    
+    margin: 10px;
+       padding: 0px;
+      
+       justify-content: center;
+       align-content: center;
+       justify-items: center;
+       align-items: center;
+       @media (max-width: 800px) 
+  {  width: 85%;
+    align-content: space-around;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    display: flex;
+      } 
+   }
 .vignette
 {
-    margin: 10px;
-    width: 85%;
+    
+    width: 100%;
     max-width: 500px;
-    margin: 20px;
+    margin: 10px;
+    margin-right: 0px;
     padding-bottom: 5px;
     background-color: #FFFFFF;
     border-radius: 15px;
-    align-content: center;
-    justify-content: center;
+   
     @include shadow;  
     img 
     {
